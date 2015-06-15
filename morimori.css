@@ -1,0 +1,45 @@
+/*Basic Reset*/
+* {margin: 0; padding: 0;}
+
+.morimoritop{
+	width: 640px;
+	height: 1136px;
+	color: #fff;
+	font-size: 20px;
+	font-family: メイリオ, arial, verdana;
+	line-height: 350%;
+	text-align: center;
+}
+
+.morimoritop a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.morimoritop>li{
+	background: linear-gradient(#66CC66,#006600);
+	width: 50%;
+	height: 50%;
+	list-style-type: none;
+}
+
+.morimoritop .tophead{
+	padding: 30px;
+}
+
+.morimoritop .Act_button >li{
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	display: inline-block;
+	margin: 20px;
+	padding: 10px, 20px;
+	width: 220px;
+	border-radius: 15px;
+	border: solid 1px #fff;
+	background: linear-gradient(#66CC66, #006600);
+}
+
+.morimoritop .Act_button :first-child{
+	margin-top: 80px;
+}
