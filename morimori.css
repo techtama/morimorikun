@@ -2,9 +2,10 @@
 * {margin: 0; padding: 0;}
 
 .morimoritop{
+	color: #fff;
 	width: 640px;
 	height: 1136px;
-	color: #fff;
+	background: linear-gradient(#66CC66,#006600);
 	font-size: 20px;
 	font-family: メイリオ, arial, verdana;
 	line-height: 350%;
@@ -12,13 +13,13 @@
 }
 
 .morimoritop>li{
-	background: linear-gradient(#66CC66,#006600);
 	width: 50%;
 	height: 50%;
 	list-style-type: none;
 }
 
 .morimoritop .tophead{
+
 	padding: 30px;
 }
 
