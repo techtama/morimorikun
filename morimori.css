@@ -1,4 +1,4 @@
-/*Basic Reset*/
+﻿/*Basic Reset*/
 * {margin: 0; padding: 0;}
 
 .morimoritop{
@@ -9,11 +9,6 @@
 	font-family: メイリオ, arial, verdana;
 	line-height: 350%;
 	text-align: center;
-}
-
-.morimoritop a{
-	text-decoration: none;
-	color: #fff;
 }
 
 .morimoritop>li{
@@ -28,7 +23,6 @@
 }
 
 .morimoritop .Act_button >li{
-	color: #fff;
 	font-size: 22px;
 	font-weight: bold;
 	display: inline-block;
@@ -42,4 +36,13 @@
 
 .morimoritop .Act_button :first-child{
 	margin-top: 80px;
+}
+
+.morimoritop a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.morimoritop a:active{
+	color: #C0C0C0;
 }
