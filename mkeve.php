@@ -7,14 +7,14 @@
 <body>
 <?php
 	//入力内容の受け取り
-	$evename=$_POST['evename'];
-	$kouho=$_POST['kouho'];
-	$comment=$_POST['comment'];
+	$event_name=$_POST['event_name'];
+	$kouho_name=$_POST['kouho_name'];
+	$event_memo=$_POST['event_memo'];
 
 	//サニタイジング
-	$evename=htmlspecialchars($evename);
-	$kouho=htmlspecialchars($kouho);
-	$comment=htmlspecialchars($comment);
+	$event_name=htmlspecialchars($event_name);
+	$kouho_name=htmlspecialchars($kouho_name);
+	$event_memo=htmlspecialchars($event_memo);
 
 	//DB接続
 	$dsn='mysql:dbname=Morimori;host=localhost;charaset=utf8;';
@@ -32,6 +32,12 @@
 	}
 
 
+	$stmt = %dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
+	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));　　　//プリペアードステートメントの実行
+
+	$stmt = %dbh->prepare("insert into kouho(kouho_name) values($_POST['event_memo'])");
+
+	echo "done";
 ?>
 </body>
 </html>
