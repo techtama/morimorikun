@@ -20,12 +20,9 @@
 	$dsn='mysql:dbname=Morimori;host=localhost;charaset=utf8;';
 	$username = 'yu';
 	$password = 'morimorimorimori';
-	$options = array(
-    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-	);
 
 	try{
-		$dbh = new PDO($dsn, $username, $password, $options);
+		$dbh = new PDO($dsn, $username, $password);
 	}catch(PDOException $e){
 		var_dump($e->getMessage());
 		exit;
@@ -38,6 +35,8 @@
 	$stmt = %dbh->prepare("insert into kouho(kouho_name) values($_POST['event_memo'])");
 
 	echo "done";
+
+	$dbh = null;
 ?>
 </body>
 </html>
