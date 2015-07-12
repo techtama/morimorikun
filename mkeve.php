@@ -6,10 +6,11 @@
 </head>
 <body>
 <?php
+
 	//入力内容の受け取り
-	$event_name=$_POST['event_name'];
-	$kouho_name=$_POST['kouho_name'];
-	$event_memo=$_POST['event_memo'];
+	$event_name=$_POST["event_name"];
+	$kouho_name=$_POST["kouho_name"];
+	$event_memo=$_POST["event_memo"];
 
 	//サニタイジング
 	$event_name=htmlspecialchars($event_name);
@@ -29,11 +30,20 @@
 	}
 
 
-	$stmt = %dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
-	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));　　　//プリペアードステートメントの実行
+	$stmt = $dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
+	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));//プリペアードステートメントの実行
 
-	$stmt = %dbh->prepare("insert into kouho(kouho_name) values($_POST['event_memo'])");
+	$kouho = explode("\n", $kouho_name);//ブンカツ
+	$cnt = count($kouho);
+	
+	for( $i=0;$i<$cnt;$i++){
+	//for
+	$stmt = $dbh->prepare("insert into kouho(event_id, kouho_name) values(?,?)");
+	$stmt->execute(array($dbh->lastInsertId(), $kouho[$i]));//プリペアードステートメントの実行
 
+}
+
+	echo "$cnt";
 	echo "done";
 
 	$dbh = null;
