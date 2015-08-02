@@ -11,7 +11,7 @@
 	<h1>もりもりくん</h1>
 </div>
 
-	<a href="morimori.html">もどる</a>
+	<a href="morimori_choice.html">もどる</a>
 	<h3>●出欠を入力する</h3>
 		<h4>｜8月第1週撮影日程調整<h5>回答数：12</h5></h4>
 			<p>イベントの説明</p>
@@ -38,6 +38,21 @@
 			</tbody>
 		</table>
 	<input type="button" value="出欠を入力する" onclick="add();">
+
+	<form action="syukketu.php" method="post">
+	<p>
+	8/1(火)4限
+	<input type="radio" name="hyouka" value="5">撮
+	<input type="radio" name="hyouka" value="4">○
+	<input type="radio" name="hyouka" value="3">△
+	<input type="radio" name="hyouka" value="2">×
+	<input type="radio" name="hyouka" value="1" checked="checked">未
+	</p>
+	<p>
+	<input type="submit" value="送信する">
+	</p>
+	</form>
+
 
 
 </body>
