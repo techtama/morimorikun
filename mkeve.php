@@ -29,7 +29,8 @@
 		exit;
 	}
 
-
+	$stmt = $dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
+	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));//プリペアードステートメントの実行
 
 	$eveid = $dbh->lastInsertId();
 
@@ -44,9 +45,12 @@
 
 	}
 
-	echo "$cnt";
-	echo "done";
+	echo "イベント作り成功!<br/><br/><br/>";
+?>
 
+	<a href='morimori_syu.php?id=<?php echo $eveid ?>'>確認しましょう</a>
+
+<?php
 	$dbh = null;
 ?>
 </body>
