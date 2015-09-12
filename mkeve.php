@@ -30,18 +30,19 @@
 	}
 
 
-	$stmt = $dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
-	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));//プリペアードステートメントの実行
+
+	$eveid = $dbh->lastInsertId();
 
 	$kouho = explode("\n", $kouho_name);//ブンカツ
 	$cnt = count($kouho);
 	
+	
 	for( $i=0;$i<$cnt;$i++){
 	//for
 	$stmt = $dbh->prepare("insert into kouho(event_id, kouho_name) values(?,?)");
-	$stmt->execute(array($dbh->lastInsertId(), $kouho[$i]));//プリペアードステートメントの実行
+	$stmt->execute(array( $eveid , $kouho[$i]));//プリペアードステートメントの実行
 
-}
+	}
 
 	echo "$cnt";
 	echo "done";
