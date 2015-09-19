@@ -1,49 +1,65 @@
 ﻿/*Basic Reset*/
 * {margin: 0; padding: 0;}
 
+html,body{
+	height: 100%;
+}
+
 .morimoritop{
 	color: #fff;
-	width: 640px;
-	height: 1136px;
-	background: linear-gradient(#66CC66,#006600);
-	font-size: 20px;
+	width: 100%;
+    position: relative;
+    height:auto !important; /*IE6対策*/
+    height: 100%; /*IE6対策*/
+    min-height: 100%;
+    font-size: 20px;
 	font-family: メイリオ, arial, verdana;
 	line-height: 350%;
 	text-align: center;
+	background: url(school.jpg) no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .morimoritop>li{
-	width: 50%;
-	height: 50%;
 	list-style-type: none;
 }
 
 .morimoritop .tophead{
-
 	padding: 30px;
 }
 
-.morimoritop .Act_button >li{
+.morimoritop .Act_button li{
 	font-size: 22px;
 	font-weight: bold;
 	display: inline-block;
-	margin: 20px;
-	padding: 10px, 20px;
-	width: 220px;
+	margin: 5%;
+	padding: 1.5%;
+	width: 70%;
 	border-radius: 15px;
-	border: solid 1px #fff;
-	background: linear-gradient(#66CC66, #006600);
+	border: solid 1px #432816;
+	background-color: rgba(255,255,255,0.8);
 }
 
 .morimoritop .Act_button :first-child{
-	margin-top: 80px;
+	margin-top: 50px;
 }
 
 .morimoritop a{
 	text-decoration: none;
-	color: #fff;
+	color: #432816; 
 }
 
 .morimoritop a:active{
 	color: #C0C0C0;
+}
+.main{
+	padding-bottom: 50px
+}
+.footer {
+	height:50px;
+    position:absolute;
+    bottom: 0px;
 }

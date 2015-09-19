@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<link href="morimori.css" rel="stylesheet" type="text/css" media="all">
+	<link href="choice.css" rel="stylesheet" type="text/css" media="all">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>イベントを選ぶ｜もりもりくん</title>
@@ -21,13 +21,15 @@
 		var_dump($e->getMessage());
 		exit;
 	}
+	
 
 ?>
 
-<div id="header">
+<div class="header">
 	<h1>もりもりくん</h1>
 </div>
-	<a href="morimori.html">もどる</a>
+	<a class="modoru" href="morimori.html">＜ もどる　</a>
+	<div class="choice">
 	<h3>●入力するイベントを選ぶ</h3>
 		<ul>
 		<?php
@@ -43,7 +45,9 @@
 		?>
 	
 		</ul>
-
+	</div>
+	
+	<div class="footer">NAGOYAmanavee</div>
 
 </body>
 </html>

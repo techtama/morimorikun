@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+	<link href="syu.css" rel="stylesheet" type="text/css" media="all">
 	<meta charset="UTF-8">
-	<title>イベントを作る｜もりもりくん</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>出欠確認｜もりもりくん</title>
 </head>
 <body>
 <?php
@@ -19,6 +21,7 @@
 		exit;
 	}
 
+
 	//入力内容の受け取り
 	$user_id=$_POST["manavee_id"];
 	$comment=$_POST["comment"];
@@ -29,9 +32,25 @@
 	$comment=htmlspecialchars($comment);
 	$id=htmlspecialchars($id);
 
+	if ($user_id=='') {
+		?>
+		
+		<div class="header">
+		<h1>もりもりくん</h1>
+		</div>
 
-	$stm = $dbh->query("select * from kouho where event_id = $id");
-	$kouho_data = $stm->fetchAll(); 
+		<div class="syu">
+		<?php
+		echo "※名前を選択してください。<br/><br/><br/>";
+		?>
+		<input type='button' value = '戻る' onClick='history.back()' >
+		</div>
+		<div id="footer">NAGOYAmanavee</div>
+		<?php
+	}else{
+
+		$stm = $dbh->query("select * from kouho where event_id = $id");
+		$kouho_data = $stm->fetchAll(); 
 				foreach($kouho_data as $row){
 
 
@@ -51,18 +70,29 @@
 					 	
 					}
 
-	if($count>0){
-		$stm = $dbh->prepare("update comments set comment = '$comment' where event_id = $id and user_id = $user_id");
-		$stm->execute();
-	}else{
-		$stm = $dbh->prepare("insert into comments(event_id,user_id,comment) values(?,?,?)");
-		$stm->execute(array($_POST["id"],$_POST['manavee_id'],$_POST["comment"]));
-	}
+		if($count>0){
+			$stm = $dbh->prepare("update comments set comment = '$comment' where event_id = $id and user_id = $user_id");
+			$stm->execute();
+		}else{
+			$stm = $dbh->prepare("insert into comments(event_id,user_id,comment) values(?,?,?)");
+			$stm->execute(array($_POST["id"],$_POST['manavee_id'],$_POST["comment"]));
+		}
+		?>	
 
-	echo "送信されました。<br /><br /><br />入力ページに戻ります。";
-?>
-	<meta http-equiv="refresh" content="3;URL=morimori_syu.php?id=<?php echo $id ?>">
+		<div class="header">
+		<h1>もりもりくん</h1>
+		</div>	
+
+		<div class="syu">
+		<?php
+		echo "送信されました。<br /><br /><br />入力ページに戻ります。";
+		?>
+		<meta http-equiv="refresh" content="3;URL=morimori_syu.php?id=<?php echo $id ?>">
+		</div>
+		<div id="footer">NAGOYAmanavee</div>
+
 <?php
+	}
 	$dbh = null;
 ?>
 </body>

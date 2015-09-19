@@ -1,0 +1,77 @@
+/*Basic Reset*/
+* {margin: 0; padding: 0;}
+
+html{
+	height: 100%;
+}
+
+body{
+	position: relative;
+	height:auto !important; /*IE6対策*/
+    height: 100%; /*IE6対策*/
+    min-height: 100%;
+	background: url(school.jpg) no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: "メイリオ",arial, verdana;
+	color: #432816; 
+}
+
+.header{
+	color: #fff;
+	width: 100%;
+    height:auto !important; /*IE6対策*/
+    height: 100%; /*IE6対策*/
+    min-height: 100%;
+    font-size: 15px;
+	font-family: "メイリオ", arial, verdana;
+	line-height: 400%;
+	text-align: center;
+}
+
+.modoru{
+	margin-left: 5%;
+	padding: 2%;
+    border-radius:10px;
+    background: rgba(255,255,255,0.8);
+}
+
+a{
+	text-decoration: underline;
+	color: #432816;
+}
+
+a.modoru{
+	text-decoration: none;
+	color: #432816;
+}
+
+a:active{
+	color: #C0C0C0;
+}
+
+.choice{
+	text-align: left;
+	margin-top: 4%;
+	padding: 4%;
+	padding-bottom: 10%;
+	margin-left: 5%;
+	width:82%;
+    height:90%;
+    margin:10%,10%;
+    background: rgba(255,255,255,0.8);
+    border-radius:10px;
+}
+
+li{
+	list-style-type: none;
+}
+
+.footer{
+	color: #fff;
+	height:50px;
+	margin-top: 5%;
+   	text-align: center;
+}

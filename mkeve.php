@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+	<link href="mkeve.css" rel="stylesheet" type="text/css" media="all">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>イベントを作る｜もりもりくん</title>
 </head>
 <body>
@@ -29,6 +31,28 @@
 		exit;
 	}
 
+	if ($event_name=='' or $kouho_name=='') {
+		?>
+		
+	<div class="back">
+
+	<div class="header">
+	<h1>もりもりくん</h1>
+	</div>
+
+	<div class="mkeve">
+
+		<?php
+		echo "入力されていない項目があります。<br/><br/><br/>";
+		?>
+		<input class="btn" type='button' value = '戻る' onClick='history.back()' >
+	</div>
+		<div class="footer2">NAGOYAmanavee</div>
+	</div>
+
+		<?php
+	}else{
+
 	$stmt = $dbh->prepare("insert into events(event_name,event_memo) values(?,?)"); //?-->プレイスホルダー
 	$stmt->execute(array($_POST['event_name'], $_POST['event_memo']));//プリペアードステートメントの実行
 
@@ -44,13 +68,25 @@
 	$stmt->execute(array( $eveid , $kouho[$i]));//プリペアードステートメントの実行
 
 	}
+?>
+	<div class="back">
+	
+	<div class="header">
+	<h1>もりもりくん</h1>
+	</div>
+	
+	<div class="mkeve">
 
+<?php
 	echo "イベント作り成功!<br/><br/><br/>";
 ?>
 
-	<a href='morimori_syu.php?id=<?php echo $eveid ?>'>確認しましょう</a>
-
+		<a id="kakunin" href='morimori_syu.php?id=<?php echo $eveid ?>'>確認しましょう</a>
+	</div>
+		<div class="footer2">NAGOYAmanavee</div>
+	</div>
 <?php
+	}
 	$dbh = null;
 ?>
 </body>
