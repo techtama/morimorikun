@@ -43,9 +43,9 @@
 		<?php
 		echo "※名前を選択してください。<br/><br/><br/>";
 		?>
-		<input type='button' value = '戻る' onClick='history.back()' >
+		<input type='button' class="button" value = '戻る' onClick='history.back()' >
 		</div>
-		<div id="footer">NAGOYAmanavee</div>
+		<div class="footer">NAGOYAmanavee</div>
 		<?php
 	}else{
 
@@ -89,7 +89,7 @@
 		?>
 		<meta http-equiv="refresh" content="3;URL=morimori_syu.php?id=<?php echo $id ?>">
 		</div>
-		<div id="footer">NAGOYAmanavee</div>
+		<div class="footer">NAGOYAmanavee</div>
 
 <?php
 	}

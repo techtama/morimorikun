@@ -90,8 +90,47 @@ html,body{
 	font-family: "メイリオ";
 	font-size: 100%;
 	padding: 2%;
-	margin: 7.5%;
-	width: 80%;
+	margin: auto;
+	width: 100%;
+}
+
+.tukibtn{
+	border-radius:10px;
+}
+
+table{
+	border-spacing:1px;
+	font-size:12px;
+	font-family:"メイリオ",Verdana, Geneva, sans-serif;
+}
+
+th,td{
+	margin:0;
+	padding:5px;
+	text-align:center;
+}
+
+form{
+	margin:0;
+	padding:0 20px 20px;
+}
+
+#calendar{
+	padding:20px 10px 20px;
+	transform:scale(0.8, 1);
+	-o-transform:scale(0.8, 1);
+	-webkit-transform:scale(0.8, 1);
+	-moz-transform:scale(0.8, 1);
+	-ms-transform:scale(0.8, 1);
+	transform-origin:0 0;
+	-o-transform-origin:0 0;
+	-webkit-transform-origin:0 0;
+	-moz-transform-origin:0 0;
+	-ms-transform-origin:0 0;"
+}
+
+#calendar>h1{
+	font-size:120%;
 }
 
 textarea{
@@ -99,8 +138,8 @@ textarea{
 	font-family: "メイリオ";
 	font-size: 100%;
 	padding: 2%;
-	margin: 7.5%;
-	width: 80%;
+	margin: auto;
+	width: 100%;
 }
 
 .btn{
