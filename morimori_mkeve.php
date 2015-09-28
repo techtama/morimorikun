@@ -26,7 +26,7 @@
 		.sun2,
 		.sun3,
 		.sun4,
-		.sun5{background:#F9C;color:#fff;}
+		.sun5{background:#88c551;color:#fff;}
 
 	</style>
 </head>
@@ -167,7 +167,7 @@
 			
 			
 				<h4>｜詳細(空欄でも可)</h4>
-					<textarea name="event_memo" rows="10" placeholder="例）ゆうさんの独断と偏見によりお店は「サイゼリヤ」に決まりました。参加費は1000円です。"></textarea>
+					<textarea name="event_memo" rows="5" placeholder="例）ゆうさんの独断と偏見によりお店は「サイゼリヤ」に決まりました。参加費は1000円です。"></textarea>
 							
 				<input class="btn" type="submit" value="イベントを作る">
 	</form>
