@@ -81,13 +81,13 @@
 								txt += '<h1>◎　' + y + '年' + m + '月</h1>\n';
 								txt += '<table summary="' + y + '年' + m_display + '月" class="calendar month' + m + '">\n';
 								txt += '<tr>\n';
-								txt += '<th>SUN</th>\n';
-								txt += '<th>MON</th>\n';
-								txt += '<th>TUE</th>\n';
-								txt += '<th>WED</th>\n';
-								txt += '<th>THU</th>\n';
-								txt += '<th>FRI</th>\n';
-								txt += '<th>SAT</th>\n';
+								txt += '<th>日</th>\n';
+								txt += '<th>月</th>\n';
+								txt += '<th>火</th>\n';
+								txt += '<th>水</th>\n';
+								txt += '<th>木</th>\n';
+								txt += '<th>金</th>\n';
+								txt += '<th>土</th>\n';
 								txt += '</tr>\n';
 								txt += '<tr class="week1">\n';
 								for(var j=0;j<first_day;j++){
@@ -117,11 +117,21 @@
 						
 							
 							function dateF(idDate){
-								return idDate.slice(5,7) + "/" + idDate.slice(7) + "()";
+								return idDate.slice(5,7) + "/" + idDate.slice(7);
+							}
+
+							function dateY(idDate){
+								year = idDate.slice(1,5);
+								month =	idDate.slice(5,7);
+								day = idDate.slice(7);	
+								var w = ["日","月","火","水","木","金","土"];	
+								var pDate = new Date( year, month-1, day);
+
+								return w[pDate.getDay()];
 							}
 
 							$("td").click(function(event){
-								$("#kouho_name").val($("#kouho_name").val() + dateF(event.target.id) + "\n");}
+								$("#kouho_name").val($("#kouho_name").val() + dateF(event.target.id) + "(" + dateY(event.target.id) + ")" + "\n");}
 							);
 							
 							}
