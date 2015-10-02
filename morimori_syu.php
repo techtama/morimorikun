@@ -90,6 +90,9 @@
 								$stm =$dbh->query("select * from attendance where kouho_id = $kouho and attendance between 2.0 and 4.0 order by attendance desc");
 								$user_data =$stm->fetchAll(); 
 
+								echo $row["kouho_name"];
+								echo "<br />";
+
 								foreach($user_data as $rown){
 
 									$user=$rown['user_id'];

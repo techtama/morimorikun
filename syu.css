@@ -169,7 +169,8 @@ td{
 select{
 	margin:10% 0;
 	padding:2%;
-	font-size:100%;
+	font-size:130%;
+	border-radius:10px;
 }
 
 .syubtn input[type=radio]{
