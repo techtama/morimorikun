@@ -52,11 +52,9 @@ html,body{
 	text-align: left;
 	margin-top: 4%;
 	padding: 4%;
-	padding-bottom: 10%;
 	margin-left: 5%;
 	width:82%;
     height:90%;
-    margin:10%,10%;
     background: rgba(255,255,255,0.8);
     border-radius:10px;
 }
@@ -91,16 +89,29 @@ html,body{
 	font-size: 100%;
 	padding: 2%;
 	margin: auto;
-	width: 100%;
+	width: 95%;
 }
 
 .tukibtn{
-	border-radius:10px;
+	text-align:center;
+	margin:8% 10%;
+}
+
+#month_prev_ajax,#month_next_ajax{
+	margin:8%;
+	padding:4%;
+	background:#88c551;
+	color:#fff;
+	border-style: solid ;
+	border-width: 2px;”
 }
 
 table{
-	border-spacing:1px;
-	font-size:12px;
+	padding:6%;
+	background:#fff;
+	border:solid 2px;
+	border-color:#88c551;
+	font-size:75%;
 	font-family:"メイリオ",Verdana, Geneva, sans-serif;
 }
 
@@ -112,11 +123,11 @@ th,td{
 
 form{
 	margin:0;
-	padding:0 20px 20px;
+	padding:0 8px 8px 8px;
 }
 
 #calendar{
-	padding:20px 10px 20px;
+	padding:20px 0px 20px;
 	transform:scale(0.8, 1);
 	-o-transform:scale(0.8, 1);
 	-webkit-transform:scale(0.8, 1);
@@ -134,12 +145,13 @@ form{
 }
 
 textarea{
+	resize: none;
 	border-radius:5px;
 	font-family: "メイリオ";
 	font-size: 100%;
 	padding: 2%;
 	margin: auto;
-	width: 100%;
+	width: 95%;
 }
 
 .btn{
@@ -166,19 +178,19 @@ textarea{
 	background: rgba(160,221,154,0.6);
 	color: #432816; 
 	text-align: center;
+	border:solid 1px;
 	border-radius:100px;
 	font-family: "メイリオ";
 	font-weight: 900;
 	font-size: 120%;
-	padding: 2%;
-	margin: 20%;
+	padding: 5%;
 	margin-bottom: 5%;
 	width: 80%;
 }
+
 
 .footer2{
 	color: #fff;
 	height:50px;
 	margin-top: 5%;
    	text-align: center;
-}

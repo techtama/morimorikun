@@ -59,6 +59,10 @@
 	$eveid = $dbh->lastInsertId();
 
 	$kouho = explode("\n", $kouho_name);//ブンカツ
+	$kouho = array_map('trim', $kouho);
+	$kouho = array_filter($kouho,'strlen');
+	$kouho = array_values($kouho);
+
 	$cnt = count($kouho);
 	
 	
@@ -78,10 +82,11 @@
 	<div class="mkeve">
 
 <?php
-	echo "イベント作り成功!<br/><br/><br/>";
+	echo "イベント作り成功!<br/><br/><br/><br/>";
 ?>
 
-		<a id="kakunin" href='morimori_syu.php?id=<?php echo $eveid ?>'>確認しましょう</a>
+		<a id="kakunin" href='morimori_syu.php?id=<?php echo $eveid ?>'>確認しましょう>></a>
+		<br><br>
 	</div>
 		<div class="footer2">NAGOYAmanavee</div>
 	</div>

@@ -82,6 +82,11 @@ body{
 	letter-spacing:1.0pt;
 }
 
+table{
+	table-layout:fixed;
+	width:100%;
+}
+
 th{
 	display:table;
 	width: 20%;
@@ -103,6 +108,17 @@ td{
 	background-color: #fafafa;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
+}
+
+.e{
+	width:35%;
+}
+
+.comment{
+	margin:6%;
+	padding:5%;
+	border:dashed 1px;
+	border-radius:10px;
 }
 
 .popup-content{
@@ -145,8 +161,9 @@ td{
 }
 
 .popup-btn{
-	border-style: solid ;
-	border-width: 1px;”
+	border: solid 5px;
+	border-color:#88c551;
+	padding:5%;
 }
 
 select{
@@ -189,6 +206,7 @@ select{
 }
 
 textarea{
+	resize: none;
 	border-radius:5px;
 	font-family: "メイリオ";
 	font-size: 100%;

@@ -44,7 +44,7 @@
 
 ?>
 
-		<span id="kaitousu" class="small">回答数：</span><?php echo $count; ?><br><br>
+		<span id="kaitousu" class="small">回答数：<?php echo $count; ?><br></span>
 		
 		イベント説明</h4>
 		
@@ -55,12 +55,12 @@
 		<table>
 			<tbody>
 				<tr>
-					<td>日程</td>
+					<td class="e">日程</td>
 					<td>撮★</td>
-					<td>○</td>
-					<td>△</td>
-					<td>×</td>
-					<td>未</td>
+					<td>　○</td>
+					<td>　△</td>
+					<td>　×</td>
+					<td>　未</td>
 				</tr>
 
 				<?php
@@ -167,7 +167,7 @@
 			</tbody>
 		</table>
 
-	<p>
+	<div class="comment">
 		○コメント<br>
 		<?php
 			$stm =$dbh->query("select * from comments where event_id = $id and comment !=''");
@@ -187,7 +187,7 @@
 		<?php
 			}
 		?>
-	</p>
+	</div>
 
 
 	<div class="popup-unit">
@@ -229,7 +229,7 @@
 				</div>
 			
 			<input type="radio" name="<?php echo $row['kouho_id']?>" value="4" id="s4<?php echo $row['kouho_id']?>"/>
-			<label for="s4<?php echo $row['kouho_id']?>" class="radio"> 撮</label>
+			<label for="s4<?php echo $row['kouho_id']?>" class="radio">撮</label>
 			<input type="radio" name="<?php echo $row['kouho_id']?>" value="3" id="s3<?php echo $row['kouho_id']?>"/>
 			<label for="s3<?php echo $row['kouho_id']?>" class="radio">○</label>
 			<input type="radio" name="<?php echo $row['kouho_id']?>" value="2" id="s2<?php echo $row['kouho_id']?>"/>

@@ -56,23 +56,13 @@
 					</p>
 
 					<div id="calendar"></div>
-					<div class="tukibtn"><a href="#" id="month_prev_ajax">前月へ</a> <a href="#" id="month_next_ajax">次月へ</a></div>
+					<div class="tukibtn"><span id="month_prev_ajax">前月へ</span> <span id="month_next_ajax">次月へ</span></div>
 
 					<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
 						<script type="text/javascript">
 						(function(){
 							//　取得したい年月設定
-							var y,m;
-							var p = location.search;
-							if(p.split("year=").length>1 && p.split("&month=").length>1){
-								y = eval(p.split("year=")[1].split("&")[0]);
-								m = eval(p.split("&month=")[1].split("&")[0]);
-							}else{
-								y = new Date().getFullYear();
-								m = new Date().getMonth()+1;
-							}
-							
 							
 							function calendar(y,m){
 								
@@ -89,7 +79,7 @@
 								
 								// マークアップ生成
 								var txt = "";
-								txt += '<h1>' + y + '年' + m + '月</h1>\n';
+								txt += '<h1>◎　' + y + '年' + m + '月</h1>\n';
 								txt += '<table summary="' + y + '年' + m_display + '月" class="calendar month' + m + '">\n';
 								txt += '<tr>\n';
 								txt += '<th>SUN</th>\n';
@@ -125,24 +115,24 @@
 								
 								// 書き出し
 								$("#calendar").html(txt);
+						
+							
+							function dateF(idDate){
+								return idDate.slice(5,7) + "/" + idDate.slice(7) + "()";
+							}
+
+							$("td").click(function(event){
+								$("#kouho_name").val($("#kouho_name").val() + dateF(event.target.id) + "\n");}
+							);
+							
 							}
 							
-							
 							$(document).ready(function(){
+								y = new Date().getFullYear();
+								m = new Date().getMonth()+1;
 								calendar(y,m);
 								
-								$("#month_prev").click(function(){
-									m--;
-									if(m==0){y--;m=12;}
-									location.href = "?year=" + y + "&month=" + m;
-									return false;
-								});
-								$("#month_next").click(function(){
-									m++;
-									if(m==13){y++;m=1;}
-									location.href = "?year=" + y + "&month=" + m;
-									return false;
-								});
+							
 								$("#month_prev_ajax").click(function(){
 									m--;
 									if(m==0){y--;m=12;}
@@ -163,7 +153,7 @@
 						</script>
 
 
-					<textarea name="kouho_name" rows="10" placeholder="候補の区切りは改行で判断されます。また、カレンダーの日付をタップすると日時が入ります。&#13;&#10;&#13;&#10;例：&#13;&#10;8/1（火）4限&#13;&#10;5限&#13;&#10;8/3（木）夜"></textarea>
+					<textarea name="kouho_name" id="kouho_name" rows="10" placeholder="候補の区切りは改行で判断されます。また、カレンダーの日付をタップすると日時が入ります。&#13;&#10;&#13;&#10;例：&#13;&#10;8/1（火）4限&#13;&#10;5限&#13;&#10;8/3（木）夜"></textarea>
 			
 			
 				<h4>｜詳細(空欄でも可)</h4>
